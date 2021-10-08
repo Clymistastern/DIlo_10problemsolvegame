@@ -42,22 +42,16 @@ public class p2BallControl : MonoBehaviour
         }
     }
 
-    void RestartGame()
+    // Start is called before the first frame update
+    void Start()
     {
+        rigidBody2D = GetComponent<Rigidbody2D>();
         // Kembalikan bola ke posisi semula
         ResetBall();
  
         // Setelah 2 detik, berikan gaya ke bola
         Invoke("PushBall", 2);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rigidBody2D = GetComponent<Rigidbody2D>();
  
-        // Mulai game
-        RestartGame();
     }
 
     // Update is called once per frame
